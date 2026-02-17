@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Get a Quote — Twistline Studio</title>
+    <meta name="description" content="Get a tattoo quote: size, placement, style, budget range, and references." />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script defer src="/assets/js/main.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div class="header-row">
+          <a class="brand" href="/">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span class="brand-text">
+              <strong>TWISTLINE STUDIO</strong>
+              <span class="muted">Get a quote</span>
+            </span>
+          </a>
+
+          <nav class="nav" aria-label="Primary">
+            <a href="/artists/">Artists</a>
+            <a href="/services/">Services</a>
+            <a href="/aftercare/">Aftercare</a>
+            <a href="/faq/">FAQ</a>
+          </nav>
+
+          <div class="header-actions">
+            <a class="btn ghost call" href="tel:+12100000000">Call</a>
+            <button class="mobile-toggle" data-nav-toggle aria-label="Open menu" aria-expanded="false">
+              <span class="burger" aria-hidden="true"><span></span><span></span><span></span></span>
+            </button>
+          </div>
+        </div>
+
+        <nav class="mobile-nav" data-mobile-nav hidden aria-label="Mobile">
+          <a href="/artists/">Artists</a>
+          <a href="/services/">Services</a>
+          <a href="/aftercare/">Aftercare</a>
+          <a href="/faq/">FAQ</a>
+          <a href="tel:+12100000000">Call</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container">
+        <div class="card pad">
+          <h1 class="h1" style="font-size:34px; margin-top:0">Get a Quote</h1>
+          <p class="lead">
+            Give us enough detail to match you to the right artist. You’ll hear back fast.
+          </p>
+
+          <!-- Netlify Forms -->
+          <form
+            name="quote"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            action="/thanks/"
+          >
+            <input type="hidden" name="form-name" value="quote" />
+            <p hidden>
+              <label>Don’t fill this out: <input name="bot-field" /></label>
+            </p>
+
+            <div class="grid2">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" required />
+              </div>
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" placeholder="(210) 000-0000" />
+              </div>
+            </div>
+
+            <div class="grid2">
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required />
+              </div>
+              <div class="field">
+                <label for="service">Service</label>
+                <select id="service" name="service" required>
+                  <option value="">Choose…</option>
+                  <option>Tattoo</option>
+                  <option>Piercing</option>
+                  <option>Laser Removal</option>
+                  <option>Cosmetic Tattoo</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid2">
+              <div class="field">
+                <label for="placement">Placement</label>
+                <input id="placement" name="placement" placeholder="Forearm, upper arm, thigh…" />
+              </div>
+              <div class="field">
+                <label for="size">Approx size</label>
+                <input id="size" name="size" placeholder='e.g. "4in x 6in"' />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="style">Style</label>
+              <input id="style" name="style" placeholder="Black & grey realism, neo-trad, fine line…" />
+            </div>
+
+            <div class="field">
+              <label for="budget">Budget range</label>
+              <select id="budget" name="budget">
+                <option value="">Prefer not to say</option>
+                <option>$150–$300</option>
+                <option>$300–$600</option>
+                <option>$600–$1,000</option>
+                <option>$1,000+</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="details">Describe what you want</label>
+              <textarea
+                id="details"
+                name="details"
+                placeholder="What is it? Any must-have elements? Color vs black & grey? Timeline?"
+              ></textarea>
+            </div>
+
+            <div class="field">
+              <label for="refs">Reference links (optional)</label>
+              <input id="refs" name="refs" placeholder="Instagram links / Pinterest / Google Drive link…" />
+            </div>
+
+            <div class="hero-cta" style="margin-top:14px">
+              <button class="btn primary" type="submit">Submit Quote Request</button>
+              <a class="btn ghost" href="tel:+12100000000">Call instead</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">© <span id="y"></span> Twistline Studio</div>
+      <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+    </footer>
+  </body>
+</html>
